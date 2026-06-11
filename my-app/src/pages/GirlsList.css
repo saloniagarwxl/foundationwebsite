@@ -1,89 +1,204 @@
+.girls-list-page {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f0f4fa;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.girls-list-container {
+    width: 100%;
+    max-width: 1330px;
+    margin: 0 auto;
+    background-color: #f0f4fa;
+}
+
 /* Header */
 .girls-list-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 24px;
-}
-
-.girls-list-header p {
-    display: flex;
-    align-items: center;
-    margin-top: 0cqi;
-    margin-bottom: 24px;
-    margin-left: 40px;
+    margin-bottom: 30px;
 }
 
 .girls-list-header h1 {
-    font-size: 46px;
-    color: #111827;
-    font-family: Georgia, "Times New Roman", Times, serif;
+    margin: 0;
+    font-family: Poppins, Arial, sans-serif;
+    font-weight: 600;
+    font-size: 28px;
+    color: #1f2937;
+    letter-spacing: 0.12px;
+}
 
+.girls-list-header p {
+    margin-top: 8px;
+    margin-bottom: 0;
+    color: #6b7280;
+    font-size: 14px;
 }
 
 .add-girl-button {
     padding: 12px 18px;
     border: none;
-    background-color: #0f766e;
+    border-radius: 10px;
+    background-color: #e05555;
     color: white;
     font-weight: bold;
-
+    cursor: pointer;
 }
 
 .add-girl-button:hover {
-    background-color: #115e59;
+    background-color: #dd7c9c;
 }
 
-/* Search and filter area */
+/* Search area */
 .girls-toolbar {
-    display: flex;
-    gap: 16px;
-    margin-bottom: 24px;
-    padding: 18px;
-    background-color: white;
-    border: 1px solid #e5e7eb;
-    border-radius: 8px;
+    margin-bottom: 30px;
+    padding: 0;
+    background-color: transparent;
+    border: none;
 }
 
-.search-field,
-.filter-field {
-    display: flex;
-    flex-direction: column;
+.search-field {
+    width: 310px;
 }
 
-.search-field label,
-.filter-field label {
+.search-field label {
+    display: block;
     margin-bottom: 8px;
+    font-size: 13px;
     font-weight: bold;
-    color: #4b5563;
+    color: #42474d;
 }
 
-.search-field input,
-.filter-field select {
-    padding: 12px;
-    border: 1px solid #cbd5e1;
-    border-radius: 8px;
-    font-size: 15px;
+.search-field input {
+    width: 100%;
+    height: 38px;
+    padding: 4px 11px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    background-color: white;
+    font-size: 14px;
+    box-sizing: border-box;
 }
 
-/* Girl cards */
+/* Girl cards grid */
 .girls-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
 }
 
 .girl-card {
-    padding: 20px;
-    background-color: rgb(240, 229, 233);
-    border: 3px solid #101011;
-    border-radius: 8px;
+    min-height: 276px;
+    padding: 30px 43px 46px 44px;
+    border: none;
+    border-radius: 20px;
+    background-color: white;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.girl-card-main {
+    display: block;
 }
 
 .girl-avatar {
-    width: 64px;
-    height: 64px;
+    width: 125px;
+    height: 125px;
+    margin: 0 auto 18px;
     border-radius: 50%;
-    background-color: #0e0f10;
+    background-color: #f5a4a4;
+}
 
+.girl-summary h2 {
+    margin: 0;
+    font-family: Poppins, Arial, sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    color: #111827;
+    text-align: center;
+}
+
+.girl-info-grid {
+    margin-top: 8px;
+}
+
+.girl-info-grid div {
+    margin: 0;
+}
+
+.info-label {
+    color: #6b7280;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.girl-info-grid strong {
+    color: #6b7280;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.action-button {
+    margin-top: 18px;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.view-button {
+    background-color: #f05454;
+    color: white;
+}
+
+.view-button:hover {
+    background-color: #d94343;
+}
+
+.empty-state {
+    grid-column: 1 / -1;
+    padding: 40px;
+    background-color: rgb(243, 243, 243);
+    border-radius: 8px;
+    text-align: center;
+    color: #6b7280;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .girls-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .girls-list-page {
+        padding: 20px;
+    }
+
+    .girls-list-header {
+        display: block;
+    }
+
+    .add-girl-button {
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    .search-field {
+        width: 100%;
+    }
+
+    .girls-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .girl-card {
+        padding: 30px 20px;
+    }
 }

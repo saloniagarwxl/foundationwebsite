@@ -1,0 +1,89 @@
+/* Header */
+.girls-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.girls-list-header p {
+    display: flex;
+    align-items: center;
+    margin-top: 0cqi;
+    margin-bottom: 24px;
+    margin-left: 40px;
+}
+
+.girls-list-header h1 {
+    font-size: 46px;
+    color: #111827;
+    font-family: Georgia, "Times New Roman", Times, serif;
+
+}
+
+.add-girl-button {
+    padding: 12px 18px;
+    border: none;
+    background-color: #0f766e;
+    color: white;
+    font-weight: bold;
+
+}
+
+.add-girl-button:hover {
+    background-color: #115e59;
+}
+
+/* Search and filter area */
+.girls-toolbar {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding: 18px;
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+}
+
+.search-field,
+.filter-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.search-field label,
+.filter-field label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #4b5563;
+}
+
+.search-field input,
+.filter-field select {
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+/* Girl cards */
+.girls-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.girl-card {
+    padding: 20px;
+    background-color: rgb(240, 229, 233);
+    border: 3px solid #101011;
+    border-radius: 8px;
+}
+
+.girl-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: #0e0f10;
+
+}

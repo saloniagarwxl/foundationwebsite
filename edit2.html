@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Girls NGO - Beneficiary Management</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="header">
+    <h1>Beneficiary Management System</h1>
+</div>
+
+<div class="search-box">
+    <input type="text"
+           id="searchInput"
+           placeholder="Search beneficiary..."
+           onkeyup="searchCards()">
+</div>
+
+<div class="card-container" id="cardContainer"></div>
+
+<!-- VIEW PROFILE MODAL -->
+
+<div id="viewModal" class="modal">
+    <div class="modal-content">
+
+        <span class="close" onclick="closeView()">&times;</span>
+
+        <h2>Beneficiary Profile</h2>
+
+        <div class="profile-grid">
+
+            <div><strong>Name:</strong> <span id="v_name"></span></div>
+            <div><strong>Mentor:</strong> <span id="v_mentor"></span></div>
+
+            <div><strong>Email:</strong> <span id="v_email"></span></div>
+            <div><strong>Age:</strong> <span id="v_age"></span></div>
+
+            <div><strong>Mobile:</strong> <span id="v_mobile"></span></div>
+            <div><strong>Status:</strong> <span id="v_status"></span></div>
+
+            <div class="full-width">
+                <strong>Address:</strong>
+                <span id="v_address"></span>
+            </div>
+
+            <div><strong>Education:</strong> <span id="v_education"></span></div>
+
+            <div class="full-width">
+                <strong>Help Provided:</strong>
+                <span id="v_help"></span>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<!-- EDIT MODAL -->
+
+<div id="editModal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="close" onclick="closeEdit()">&times;</span>
+
+        <h2>Edit Beneficiary</h2>
+
+        <div class="form-grid">
+
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" id="name">
+            </div>
+
+            <div class="form-group">
+                <label>Mentor Name</label>
+                <input type="text" id="mentor">
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="email">
+            </div>
+
+            <div class="form-group">
+                <label>Age</label>
+                <input type="number" id="age">
+            </div>
+
+            <div class="form-group">
+                <label>Mobile Number</label>
+                <input type="text" id="mobile">
+            </div>
+
+            <div class="form-group">
+                <label>Status</label>
+
+                <select id="status">
+                    <option>Active</option>
+                    <option>Inactive</option>
+                    <option>Pending</option>
+                </select>
+            </div>
+
+            <div class="form-group full-width">
+                <label>Address</label>
+                <textarea id="address"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Education</label>
+                <input type="text" id="education">
+            </div>
+
+            <div class="form-group">
+                <label>Help Provided</label>
+                <input type="text" id="help">
+            </div>
+
+        </div>
+
+        <button class="save-btn" onclick="saveChanges()">
+            Save Changes
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+
+const beneficiaries = {
+
+BEN001:{
+name:"Priya Sharma",
+mentor:"Neha Patel",
+email:"priya@gmail.com",
+age:"18",
+address:"Ahmedabad, Gujarat",
+mobile:"9876543210",
+education:"BCA First Year",
+help:"Scholarship Support",
+status:"Active"
+},
+
+BEN002:{
+name:"Anjali Patel",
+mentor:"Kavita Shah",
+email:"anjali@gmail.com",
+age:"20",
+address:"Surat, Gujarat",
+mobile:"9876543211",
+education:"B.Com Second Year",
+help:"Career Guidance",
+status:"Active"
+},
+
+BEN003:{
+name:"Riya Shah",
+mentor:"Sneha Mehta",
+email:"riya@gmail.com",
+age:"19",
+address:"Vadodara, Gujarat",
+mobile:"9876543212",
+education:"Diploma IT",
+help:"Computer Training",
+status:"Pending"
+},
+
+BEN004:{
+name:"Pooja Verma",
+mentor:"Aarti Joshi",
+email:"pooja@gmail.com",
+age:"21",
+address:"Rajkot, Gujarat",
+mobile:"9876543213",
+education:"B.Sc",
+help:"Financial Assistance",
+status:"Active"
+},
+
+BEN005:{
+name:"Meera Singh",
+mentor:"Nidhi Desai",
+email:"meera@gmail.com",
+age:"17",
+address:"Jamnagar, Gujarat",
+mobile:"9876543214",
+education:"Class 12",
+help:"Education Sponsorship",
+status:"Inactive"
+},
+
+BEN006:{
+name:"Komal Yadav",
+mentor:"Ritu Sharma",
+email:"komal@gmail.com",
+age:"22",
+address:"Bhavnagar, Gujarat",
+mobile:"9876543215",
+education:"MBA",
+help:"Skill Development",
+status:"Active"
+}
+
+};
+
+let currentId;
+
+function renderCards(){
+
+let container=document.getElementById("cardContainer");
+
+container.innerHTML="";
+
+for(let id in beneficiaries){
+
+let b=beneficiaries[id];
+
+container.innerHTML += `
+<div class="beneficiary-card" id="${id}">
+
+<h3 class="card-name">${b.name}</h3>
+
+<p><strong>Mentor:</strong>
+<span class="card-mentor">${b.mentor}</span></p>
+
+<p><strong>Mobile:</strong>
+<span class="card-mobile">${b.mobile}</span></p>
+
+<span class="status-badge">${b.status}</span>
+
+<div class="card-buttons">
+
+<button class="view-btn"
+onclick="viewProfile('${id}')">
+View Profile
+</button>
+
+<button class="edit-btn"
+onclick="editProfile('${id}')">
+Edit
+</button>
+
+</div>
+
+</div>
+`;
+}
+}
+
+function viewProfile(id){
+
+let b=beneficiaries[id];
+
+v_name.innerText=b.name;
+v_mentor.innerText=b.mentor;
+v_email.innerText=b.email;
+v_age.innerText=b.age;
+v_mobile.innerText=b.mobile;
+v_status.innerText=b.status;
+v_address.innerText=b.address;
+v_education.innerText=b.education;
+v_help.innerText=b.help;
+
+viewModal.style.display="block";
+}
+
+function editProfile(id){
+
+currentId=id;
+
+let b=beneficiaries[id];
+
+name.value=b.name;
+mentor.value=b.mentor;
+email.value=b.email;
+age.value=b.age;
+mobile.value=b.mobile;
+status.value=b.status;
+address.value=b.address;
+education.value=b.education;
+help.value=b.help;
+
+editModal.style.display="block";
+}
+
+function saveChanges(){
+
+beneficiaries[currentId].name=name.value;
+beneficiaries[currentId].mentor=mentor.value;
+beneficiaries[currentId].email=email.value;
+beneficiaries[currentId].age=age.value;
+beneficiaries[currentId].mobile=mobile.value;
+beneficiaries[currentId].status=status.value;
+beneficiaries[currentId].address=address.value;
+beneficiaries[currentId].education=education.value;
+beneficiaries[currentId].help=help.value;
+
+renderCards();
+
+editModal.style.display="none";
+
+alert("Beneficiary updated successfully!");
+}
+
+function closeView(){
+viewModal.style.display="none";
+}
+
+function closeEdit(){
+editModal.style.display="none";
+}
+
+function searchCards(){
+
+let input=
+document.getElementById("searchInput")
+.value.toUpperCase();
+
+let cards=
+document.getElementsByClassName("beneficiary-card");
+
+for(let i=0;i<cards.length;i++){
+
+let name=
+cards[i]
+.getElementsByClassName("card-name")[0]
+.innerText;
+
+if(name.toUpperCase().indexOf(input)>-1){
+cards[i].style.display="";
+}
+else{
+cards[i].style.display="none";
+}
+}
+}
+
+renderCards();
+
+</script>
+
+</body>
+</html>

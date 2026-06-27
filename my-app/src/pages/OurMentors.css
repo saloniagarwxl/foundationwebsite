@@ -1,0 +1,281 @@
+/* Page Layout */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.mentor-dashboard {
+    display: flex;
+    min-height: 100vh;
+    background: #f8f7f7;
+    font-family: Inter, sans-serif;
+}
+
+/* Sidebar */
+
+.sidebar {
+    width: 72px;
+    background: #ffffff;
+    border-right: 1px solid #e5e5e5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    gap: 20px;
+}
+
+.logo-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #f5d5d5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.sidebar-button {
+    width: 48px;
+    height: 48px;
+    border: none;
+    background: transparent;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.sidebar-button:hover {
+    background: #f4f4f4;
+}
+
+.sidebar-button.active {
+    background: #fff0f0;
+    color: #e25555;
+}
+
+/* Main Section */
+
+.dashboard-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 1330;
+    height: 845;
+    gap: 70px;
+    opacity: 1;
+}
+
+/* Top Navbar */
+
+.topbar {
+    height: 70px;
+    background: white;
+    border-bottom: 1px solid #ececec;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 18px;
+    padding: 0 40px;
+}
+
+
+.notification-button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    width: 20px;
+}
+
+.admin-button {
+    border: none;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.admin-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #f06262;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Content */
+
+.content-area {
+    padding: 40px 60px;
+    width: 1330;
+    height: 845;
+    gap: 70px;
+    opacity: 1;
+
+}
+
+.page-header h1 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 28px;
+}
+
+/* Search + Actions */
+
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.toolbar input {
+    width: 310;
+    padding-top: 4px;
+    padding-right: 11px;
+    padding-bottom: 4px;
+    padding-left: 11px;
+    gap: 14px;
+
+    opacity: 1;
+    border-radius: 10px;
+    border: #dff5e7;
+    background: #F1F1F5;
+
+}
+
+.toolbar-actions {
+    display: flex;
+    gap: 14px;
+    justify-content: flex-end;
+}
+
+.filter-button {
+    width: 42px;
+    height: 42px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+}
+
+.add-button {
+    height: 42px;
+    padding: 0 20px;
+    border: none;
+    border-radius: 10px;
+    background: #e25555;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Table Card */
+
+.table-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+/* Rows */
+
+.table-row {
+    display: grid;
+    grid-template-columns:
+        2fr 1.6fr 2fr 1.6fr 1fr;
+
+    align-items: center;
+    padding: 22px 44px;
+}
+
+.table-header {
+    color: #9ca3af;
+    font-size: 14px;
+    border-bottom: 1px solid #ececec;
+}
+
+.table-card .table-row:not(.table-header) {
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.table-card .table-row:last-child {
+    border-bottom: none;
+}
+
+/* Progress */
+
+.progress-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.progress-track {
+    width: 90px;
+    height: 6px;
+    border-radius: 999px;
+    background: #d9d9df;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #070721;
+    border-radius: inherit;
+}
+
+/* Status */
+
+.status-badge {
+    padding: 5px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    width: fit-content;
+}
+
+.active-status {
+    background: #dff5e7;
+    color: #169c50;
+}
+
+.inactive-status {
+    background: #fde2e2;
+    color: #d94848;
+}
+
+/* Empty State */
+
+.empty-message {
+    text-align: center;
+    padding: 40px;
+    color: #777;
+}
+
+/* Responsive */
+
+@media (max-width: 1100px) {
+    .table-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .toolbar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+
+    .toolbar input {
+        width: 100%;
+    }
+}

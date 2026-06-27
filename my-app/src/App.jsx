@@ -5,6 +5,7 @@ import GirlProfile from "./pages/GirlProfile";
 import GirlsList from "./pages/GirlsList";
 import MentorsList from "./pages/MentorsList";
 import MentorsProfile from "./pages/MentorsProfile";
+import MentorsTable from "./pages/OurMentors";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Link to="/mentor-profile">Mentor Profile</Link>
         <Link to="/girls">Girls List</Link>
         <Link to="/girl-profile">Girl Profile</Link>
+        <Link to="/ourmentors">Our Mentors</Link>
       </nav>
 
       <Routes>
@@ -21,6 +23,7 @@ function App() {
         <Route path="/mentor-profile" element={<MentorsProfile />} />
         <Route path="/girls" element={<GirlsList />} />
         <Route path="/girl-profile" element={<GirlProfile />} />
+        <Route path="/ourmentors" element={<MentorsTable />} />
       </Routes>
     </BrowserRouter>
   );

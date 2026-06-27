@@ -2,13 +2,13 @@
     width: 100%;
     min-height: 100vh;
     background-color: #f0f4fa;
-    padding: 40px;
+    padding: 20px;
     box-sizing: border-box;
 }
 
 .girls-list-container {
     width: 100%;
-    max-width: 1330px;
+    max-width: 100%;
     margin: 0 auto;
     background-color: #f0f4fa;
 }
@@ -48,7 +48,7 @@
 }
 
 .add-girl-button:hover {
-    background-color: #dd7c9c;
+    background-color: #ae0a41;
 }
 
 /* Search area */
@@ -90,12 +90,16 @@
 }
 
 .girl-card {
-    min-height: 276px;
-    padding: 30px 43px 46px 44px;
-    border: none;
+    width: 100%;
+    height: 276px;
+    gap: 25px;
+    opacity: 1;
     border-radius: 20px;
-    background-color: white;
-    text-align: center;
+    padding-top: 30px;
+    padding-right: 43px;
+    padding-bottom: 46px;
+    padding-left: 44px;
+    background: #FFFFFF;
     box-sizing: border-box;
 }
 
@@ -166,39 +170,4 @@
     border-radius: 8px;
     text-align: center;
     color: #6b7280;
-}
-
-/* Tablet */
-@media (max-width: 900px) {
-    .girls-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-    .girls-list-page {
-        padding: 20px;
-    }
-
-    .girls-list-header {
-        display: block;
-    }
-
-    .add-girl-button {
-        width: 100%;
-        margin-top: 15px;
-    }
-
-    .search-field {
-        width: 100%;
-    }
-
-    .girls-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .girl-card {
-        padding: 30px 20px;
-    }
 }

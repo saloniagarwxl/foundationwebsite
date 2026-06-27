@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import "./GirlProfile.css";
+import "./Girlprofile.css";
 import girlimage from "../assets/GirlImage.jpg";
 
-
-//details for girl's profile|| dummy data used
+// Details for girl's profile. This is dummy data for showing the page design.
 const girlProfile = {
     fullName: "Kaguya Shinomiya",
     Birthdate: "March 22, 2010",
@@ -14,13 +13,13 @@ const girlProfile = {
     profileImage: girlimage,
     state: "Kyoto",
     country: "Japan",
-    studentContact: " (03) 1234-5678",
+    studentContact: "(03) 1234-5678",
     parentsContact: "(03) 1234-5678",
     studentEmail: "shinomiyakaguya@gmail.com",
 };
 
 function GirlProfile() {
-    const [showImage, setShowImage] = useState(false); //pop up of girl's profile pictire
+    const [showImage, setShowImage] = useState(false); // Pop up of girl's profile picture
 
     return (
         <div className="girl-profile-page">
@@ -99,6 +98,7 @@ function GirlProfile() {
                             {girlProfile.studentContact}
                         </span>
                     </div>
+
                     <div className="detail-item">
                         <span className="detail-label">Parent's Contact</span>
                         <span className="detail-value">
@@ -113,8 +113,6 @@ function GirlProfile() {
                         </span>
                     </div>
 
-
-
                 </div>
 
                 <div className="profile-actions">
@@ -123,7 +121,7 @@ function GirlProfile() {
                         Edit Profile
                     </button>
 
-                    {/*Either navigate this to mentor's profile or their conatact number*/}
+                    {/* Either navigate this to mentor's profile or their contact number */}
                     <button className="profile-button secondary-button">
                         Contact Mentor
                     </button>

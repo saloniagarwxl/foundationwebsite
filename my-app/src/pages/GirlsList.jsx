@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./GirlsList.css";
 
 // Dummy data for now. Later, this can come from a database or API.
@@ -43,6 +44,7 @@ const girlsData = [
 
 function GirlsList() {
     const [searchText, setSearchText] = useState("");
+    const navigate = useNavigate();
 
     //Searching for Girls in the list by name
     const filteredGirls = girlsData.filter((girl) => {
@@ -59,7 +61,7 @@ function GirlsList() {
                     </div>
 
                     <button className="add-girl-button" type="button">
-                        Add New Girl
+                        +  Add beneficiary
                     </button>
                 </header>
 
@@ -98,7 +100,11 @@ function GirlsList() {
                             </div>
 
                             <div>
-                                <button className="action-button view-button" type="button">
+                                <button
+                                    className="action-button view-button"
+                                    type="button"
+                                    onClick={() => navigate("/girl-profile")}
+                                >
                                     View Profile
                                 </button>
                             </div>

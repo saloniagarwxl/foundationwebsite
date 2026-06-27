@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import "./MentorsProfile.css";
 import mentorimage from "../assets/shoko.jpg";
 
-
-//details for mentor's profile|| dummy data used
+// Details for mentor's profile. This is dummy data for showing the page design.
 const mentorProfile = {
     fullName: "Ieri Shoko",
     Birthdate: "July 22, 1986",
@@ -15,7 +14,7 @@ const mentorProfile = {
 };
 
 function MentorsProfile() {
-    const [showImage, setShowImage] = useState(false); //pop up of mentor's profile pictire
+    const [showImage, setShowImage] = useState(false); // Pop up of mentor's profile picture
 
     return (
         <div className="mentor-profile-page">
@@ -67,15 +66,12 @@ function MentorsProfile() {
                         </span>
                     </div>
 
-
                     <div className="detail-item">
                         <span className="detail-label">Student's email</span>
                         <span className="detail-value">
                             {mentorProfile.mentorsemail}
                         </span>
                     </div>
-
-
 
                 </div>
 
@@ -84,8 +80,6 @@ function MentorsProfile() {
                     <button className="profile-button primary-button">
                         Edit Profile
                     </button>
-
-
                 </div>
 
             </div>

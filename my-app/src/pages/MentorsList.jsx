@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Mentorlist.css";
 
 // Dummy data for now. Later, this can come from a database or API.
@@ -43,6 +44,7 @@ const mentorsdata = [
 
 function MentorsList() {
     const [searchText, setSearchText] = useState("");
+    const navigate = useNavigate();
 
     // Searching for mentors by name
     const filteredMentors = mentorsdata.filter((mentor) => {
@@ -101,7 +103,11 @@ function MentorsList() {
                                 {mentor.ad}, {mentor.country}
                             </p>
 
-                            <button className="action-button view-button" type="button">
+                            <button
+                                className="action-button view-button"
+                                type="button"
+                                onClick={() => navigate("/mentor-profile")}
+                            >
                                 View Profile
                             </button>
                         </article>

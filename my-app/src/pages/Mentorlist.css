@@ -1,0 +1,250 @@
+.mentors-page {
+    width: 1530;
+    height: 1727;
+    opacity: 1;
+
+
+}
+
+.mentors-container {
+    width: 1330;
+    height: 1371;
+    gap: 70px;
+    opacity: 1;
+    background-color: #f0f4fa;
+
+}
+
+.mentors-header {
+    width: 1330;
+    height: 107;
+    gap: 27px;
+    opacity: 1;
+
+}
+
+.mentors-header h1 {
+    margin: 0;
+    font-size: 26px;
+    color: #1f2937;
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 100%;
+    letter-spacing: 0.12px;
+
+}
+
+.mentors-header p {
+    margin-top: 6px;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.add-mentor-button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 6px;
+    background-color: #E05555;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.add-mentor-button:hover {
+    background-color: #dd7c9c;
+    ;
+}
+
+.mentor-toolbar {
+    margin-bottom: 30px;
+
+}
+
+.search-field {
+    width: 260px;
+
+}
+
+.search-field label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: bold;
+
+    color: #42474d;
+}
+
+.search-field input {
+    width: 310;
+    height: 38;
+    gap: 14px;
+
+    opacity: 1;
+    padding-top: 4px;
+    padding-right: 11px;
+    padding-bottom: 4px;
+    padding-left: 11px;
+    border-radius: 10px;
+
+}
+
+.mentors-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.mentor-card {
+    width: 310;
+    height: 276;
+    gap: 25px;
+    angle: 0 deg;
+    opacity: 1;
+    padding-top: 30px;
+    padding-right: 43px;
+    padding-bottom: 46px;
+    padding-left: 44px;
+    border-radius: 20px;
+    row-start: 1;
+    column-start: 1;
+    column-span: 1;
+    row-span: 1;
+    background-color: white;
+
+}
+
+.mentor-avatar {
+    width: 125px;
+    height: 125px;
+    padding: 10px;
+    gap: 10px;
+    margin: 0 auto 18px;
+    border-radius: 50%;
+    background-color: #f5a4a4;
+}
+
+
+.mentor-card h2 {
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 18px;
+    leading-trim: NONE;
+    line-height: 100%;
+    letter-spacing: 0px;
+    text-align: center;
+
+}
+
+.mentor-location {
+    margin: 8px 0 18px;
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.action-button {
+    padding: 10px 14px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.view-button {
+    background-color: #f05454;
+    color: white;
+}
+
+.view-button:hover {
+    background-color: #d94343;
+}
+
+.empty-state {
+    grid-column: 1 / -1;
+    padding: 40px;
+    background-color: rgb(243, 243, 243);
+    border-radius: 8px;
+    text-align: center;
+    color: #6b7280;
+}
+
+@media (max-width: 900px) {
+    .mentors-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .mentors-page {
+        padding: 20px;
+    }
+
+    .mentors-header {
+        display: block;
+    }
+
+    .add-mentor-button {
+        width: 196;
+        height: 38;
+        gap: 10px;
+        opacity: 1;
+        padding-top: 8px;
+        padding-right: 18px;
+        padding-bottom: 8px;
+        padding-left: 18px;
+        border-radius: 10px;
+
+    }
+
+    .search-field {
+        width: 100%;
+    }
+
+    .mentors-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.admin-topbar {
+    height: 55px;
+    margin-bottom: 35px;
+    padding: 0 30px;
+    background-color: white;
+    border: 1px solid #d1d5db;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 18px;
+}
+
+.notification-button {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background-color: white;
+    color: #ef4444;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.admin-account-button {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    border: none;
+    background-color: white;
+    color: #111827;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.admin-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #ef4444;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

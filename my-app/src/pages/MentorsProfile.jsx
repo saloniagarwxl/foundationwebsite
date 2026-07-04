@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import "./MentorsProfile.css";
-import mentorimage from "../assets/shoko.jpg";
 
 // Details for mentor's profile. This is dummy data for showing the page design.
 const mentorProfile = {
     fullName: "Ieri Shoko",
     Birthdate: "July 22, 1986",
-    profileImage: mentorimage,
+    profileImage: "/shoko.jpg",
     state: "Kyoto",
     country: "Japan",
     mentorscontact: 56789,

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./Girlprofile.css";
-import girlimage from "../assets/GirlImage.jpg";
 
 // Details for girl's profile. This is dummy data for showing the page design.
 const girlProfile = {
@@ -10,7 +9,7 @@ const girlProfile = {
     fatherName: "Satoshi Shinomiya",
     motherName: "Futaba Miyazono",
     mentorName: "Selena Gomez",
-    profileImage: girlimage,
+    profileImage: "/GirlImage.jpg",
     state: "Kyoto",
     country: "Japan",
     studentContact: "(03) 1234-5678",

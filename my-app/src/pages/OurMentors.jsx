@@ -1,9 +1,6 @@
 
 import React, { useState } from "react";
 import "./OurMentors.css";
-import homelogo from "../assets/ic_inbox.svg";
-import edulogo from "../assets/ic_Sent.svg";
-import notiflogo from "../assets/ic_Notification.svg";
 
 
 // Dummy data for now. Later this can come from a database or backend API.
@@ -60,22 +57,11 @@ function MentorsTable() {
 
     return (
         <main className="mentor-dashboard">
-            <section className="sidebar">
-                <div className="logo-circle">W</div>
-                <button className="sidebar-button" type="button">
-                    <img src={homelogo} alt="Home" className="sidebar-icon" />
-                </button>
-                <button className="sidebar-button" type="button">
-                    <img src={edulogo} alt="edu" className="sidebar-icon" />
-                </button>
-
-            </section>
-
             <section className="dashboard-main">
                 <header className="topbar">
 
                     <button className="notification-button" type="button">
-                        <img src={notiflogo} className="notification-button" alt="Noitification" />
+                        <img src="/ic_Notification.svg" className="notification-button" alt="Notification" />
 
                     </button>
                     <button className="admin-button" type="button">

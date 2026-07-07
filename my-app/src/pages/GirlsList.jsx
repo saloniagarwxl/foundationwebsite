@@ -53,28 +53,54 @@ function GirlsList() {
 
     return (
         <main className="girls-list-page">
+            <header className="girls-topbar">
+                <button className="girls-notification-button" type="button">
+                    !
+                </button>
+
+                <button className="girls-admin-button" type="button">
+                    <span className="girls-admin-icon">A</span>
+                    <span>Admin</span>
+                </button>
+            </header>
+
             <section className="girls-list-container">
-                <header className="girls-list-header">
-                    <div>
-                        <h1>Girls List</h1>
-                        <p>Manage and monitor all registered girls.</p>
+                <section className="girls-stats">
+                    <div className="girls-stat-item">
+                        <strong>250</strong>
+                        <span>Number of Beneficiaries</span>
                     </div>
 
-                    <button className="add-girl-button" type="button">
-                        +  Add beneficiary
-                    </button>
+                    <div className="girls-stat-item">
+                        <strong>50</strong>
+                        <span>Mentors</span>
+                    </div>
+                </section>
+
+                <header className="girls-list-header">
+                    <div>
+                        <h1>Our Beneficiaries</h1>
+                    </div>
                 </header>
 
                 <section className="girls-toolbar">
                     <div className="search-field">
-                        <label htmlFor="girl-search">Search by name</label>
                         <input
                             id="girl-search"
                             type="text"
-                            placeholder="Search girls..."
+                            placeholder="Search Student"
                             value={searchText}
                             onChange={(event) => setSearchText(event.target.value)}
                         />
+                    </div>
+
+                    <div className="girls-toolbar-actions">
+                        <button className="girls-filter-button" type="button">
+                            Filter
+                        </button>
+                    <button className="add-girl-button" type="button">
+                        +  Add beneficiary
+                    </button>
                     </div>
                 </section>
 
@@ -86,7 +112,13 @@ function GirlsList() {
                                 <div className="girl-avatar"></div>
 
                                 <div className="girl-summary">
-                                    <h2>{girl.fullName}</h2>
+                                    <button
+                                        className="girl-name-button"
+                                        type="button"
+                                        onClick={() => navigate("/girl-profile")}
+                                    >
+                                        {girl.fullName}
+                                    </button>
                                 </div>
                             </div>
 
@@ -99,15 +131,6 @@ function GirlsList() {
                                 </div>
                             </div>
 
-                            <div>
-                                <button
-                                    className="action-button view-button"
-                                    type="button"
-                                    onClick={() => navigate("/girl-profile")}
-                                >
-                                    View Profile
-                                </button>
-                            </div>
                         </article>
                     ))}
 

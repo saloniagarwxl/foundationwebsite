@@ -72,10 +72,6 @@ function MentorsList() {
                         <h1>Our Mentors</h1>
                         <p>Mentors in Women for Girls Foundation</p>
                     </div>
-
-                    <button className="add-mentor-button" type="button">
-                        Add New Mentor
-                    </button>
                 </header>
 
                 <section className="mentor-toolbar">
@@ -89,6 +85,10 @@ function MentorsList() {
                             onChange={(event) => setSearchText(event.target.value)}
                         />
                     </div>
+
+                    <button className="add-mentor-button" type="button">
+                        + Add Mentor
+                    </button>
                 </section>
 
                 {/* Showing all mentors after search */}

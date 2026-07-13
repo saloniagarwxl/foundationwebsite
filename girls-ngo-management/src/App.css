@@ -1,0 +1,160 @@
+/* Login Page */
+
+.login-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ff4d94, #ff80b3);
+}
+
+.login-box {
+  width: 380px;
+  background: white;
+  padding: 35px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.2);
+}
+
+.login-box h1 {
+  color: #e91e63;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 12px;
+  background: #e91e63;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.header {
+  background: #e91e63;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.search-box {
+  text-align: center;
+  margin: 20px;
+}
+
+.search-box input {
+  width: 450px;
+  max-width: 90%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px,1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.1);
+}
+
+.card h3 {
+  color: #e91e63;
+  margin-bottom: 10px;
+}
+
+.status {
+  display: inline-block;
+  margin: 10px 0;
+  padding: 5px 12px;
+  border-radius: 20px;
+  background: #d4edda;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.buttons button {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  color: white;
+}
+
+.view {
+  background: #2196f3;
+}
+
+.edit {
+  background: #e91e63;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  width: 650px;
+  max-width: 90%;
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+}
+
+.modal-content h2 {
+  color: #e91e63;
+  margin-bottom: 20px;
+}
+
+.modal-content input,
+.modal-content select,
+.modal-content textarea {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 10px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.save {
+  background: #e91e63;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+}
+
+.cancel {
+  background: gray;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+}

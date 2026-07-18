@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { MapPin } from "lucide-react";
 import "./GirlsList.css";
 
 // Dummy data for now. Later, this can come from a database or API.
@@ -98,9 +99,9 @@ function GirlsList() {
                         <button className="girls-filter-button" type="button">
                             Filter
                         </button>
-                    <button className="add-girl-button" type="button">
-                        +  Add beneficiary
-                    </button>
+                        <button className="add-girl-button" type="button">
+                            +  Add beneficiary
+                        </button>
                     </div>
                 </section>
 
@@ -124,7 +125,9 @@ function GirlsList() {
 
                             <div className="girl-info-grid">
                                 <div>
-                                    <span className="info-label"><strong>{girl.state}, {girl.country}</strong></span>
+                                    <span className="info-label girl-location">
+                                        <MapPin className="location-icon" />
+                                        <strong>{girl.state}, {girl.country}</strong></span>
 
 
 

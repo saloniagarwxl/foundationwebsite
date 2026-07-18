@@ -150,36 +150,26 @@
     background-color: #f5a4a4;
 }
 
-.mentor-card h2 {
+.mentor-name-button {
     margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
     font-family: Arial, sans-serif;
     font-size: 15px;
     font-weight: 700;
     color: #111827;
+    cursor: pointer;
+}
+
+.mentor-name-button:hover {
+    color: #e05555;
 }
 
 .mentor-location {
     margin: 8px 0 0;
     color: #8b90a0;
     font-size: 12px;
-}
-
-.action-button {
-    margin-top: 16px;
-    padding: 9px 13px;
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.view-button {
-    background-color: #f05b5b;
-    color: #ffffff;
-}
-
-.view-button:hover {
-    background-color: #d44848;
 }
 
 .empty-state {

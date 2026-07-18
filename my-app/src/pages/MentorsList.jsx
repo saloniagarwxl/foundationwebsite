@@ -97,19 +97,17 @@ function MentorsList() {
                         <article className="mentor-card" key={mentor.id}>
                             <div className="mentor-avatar"></div>
 
-                            <h2>{mentor.fullName}</h2>
+                            <button
+                                className="mentor-name-button"
+                                type="button"
+                                onClick={() => navigate("/mentor-profile")}
+                            >
+                                {mentor.fullName}
+                            </button>
 
                             <p className="mentor-location">
                                 {mentor.ad}, {mentor.country}
                             </p>
-
-                            <button
-                                className="action-button view-button"
-                                type="button"
-                                onClick={() => navigate("/mentor-profile")}
-                            >
-                                View Profile
-                            </button>
                         </article>
                     ))}
 

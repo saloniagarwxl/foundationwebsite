@@ -3,11 +3,13 @@
   min-height: 100vh;
   display: flex;
   background-color: #f7f7fa;
+  overflow-x: hidden;
 }
 
 /* Shared side panel for all pages */
 .app-sidebar {
   width: 180px;
+  flex: 0 0 180px;
   min-height: 100vh;
   background-color: #ffffff;
   border-right: 1px solid #e5e7eb;
@@ -57,32 +59,4 @@
 .app-page-content {
   flex: 1;
   min-width: 0;
-}
-
-/* Mobile layout */
-@media (max-width: 700px) {
-  .app-layout {
-    display: block;
-  }
-
-  .app-sidebar {
-    width: 100%;
-    min-height: auto;
-    border-right: none;
-    border-bottom: 1px solid #e5e7eb;
-  }
-
-  .app-logo {
-    margin-bottom: 16px;
-  }
-
-  .app-nav {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .app-nav-button {
-    font-size: 14px;
-  }
 }

@@ -9,23 +9,14 @@
 
 /* Top admin bar */
 .admin-topbar {
-    height: 70px;
+    min-height: 4.375rem;
     background-color: #ffffff;
-    border-bottom: 1px solid #e5e7eb;
+    border-bottom: 0.0625rem solid #e5e7eb;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 18px;
-    padding: 0 55px;
-}
-
-.notification-button {
-    border: none;
-    background: transparent;
-    color: #e05555;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
+    gap: 1rem;
+    padding: 0 clamp(1rem, 4vw, 3.5rem);
 }
 
 .admin-account-button {
@@ -33,15 +24,15 @@
     background: transparent;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 0.5rem;
     color: #111827;
     font-weight: bold;
     cursor: pointer;
 }
 
 .admin-avatar {
-    width: 32px;
-    height: 32px;
+    width: 2rem;
+    aspect-ratio: 1;
     border-radius: 50%;
     background-color: #f05b5b;
     color: #ffffff;
@@ -52,26 +43,25 @@
 
 .admin-arrow {
     color: #8b90a0;
-    font-size: 12px;
+    font-size: 0.75rem;
 }
 
 /* Main content area */
 .mentors-container {
-    width: 100%;
-    max-width: 1080px;
+    width: min(92%, 67.5rem);
     margin: 0 auto;
-    padding: 55px 40px;
+    padding: clamp(2rem, 5vw, 3.5rem) 0;
     box-sizing: border-box;
 }
 
 /* Page title */
 .mentors-header {
-    margin-bottom: 22px;
+    margin-bottom: 1.375rem;
 }
 
 .mentors-header h1 {
-    margin: 0 0 12px;
-    font-size: 26px;
+    margin: 0 0 0.75rem;
+    font-size: clamp(1.35rem, 2.4vw, 1.625rem);
     font-weight: 700;
     color: #1f2937;
     text-align: left;
@@ -80,15 +70,15 @@
 .mentors-header p {
     margin: 0;
     color: #6b7280;
-    font-size: 14px;
+    font-size: 0.875rem;
     text-align: left;
 }
 
 .add-mentor-button {
-    height: 38px;
-    padding: 0 20px;
+    min-height: 2.375rem;
+    padding: 0 1.25rem;
     border: none;
-    border-radius: 10px;
+    border-radius: 0.625rem;
     background-color: #e05555;
     color: #ffffff;
     font-weight: bold;
@@ -104,23 +94,24 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 58px;
+    gap: 1rem;
+    margin-bottom: clamp(2rem, 5vw, 3.625rem);
 }
 
-.search-field {
-    width: 250px;
+.mentors-page .search-field {
+    width: min(36%, 15.625rem);
 }
 
-.search-field label {
+.mentors-page .search-field label {
     display: none;
 }
 
-.search-field input {
+.mentors-page .search-field input {
     width: 100%;
-    height: 34px;
-    padding: 0 12px;
+    min-height: 2.125rem;
+    padding: 0 0.75rem;
     border: none;
-    border-radius: 9px;
+    border-radius: 0.5625rem;
     background-color: #f1f1f5;
     color: #374151;
     box-sizing: border-box;
@@ -129,23 +120,23 @@
 /* Mentor card grid */
 .mentors-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 28px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(1rem, 2.5vw, 1.75rem);
 }
 
 .mentor-card {
-    min-height: 225px;
-    padding: 26px 20px;
+    min-height: clamp(11rem, 21vw, 14.0625rem);
+    padding: clamp(1rem, 2vw, 1.625rem) clamp(0.75rem, 2vw, 1.25rem);
     background-color: #ffffff;
-    border-radius: 14px;
+    border-radius: 0.875rem;
     text-align: center;
     box-sizing: border-box;
 }
 
 .mentor-avatar {
-    width: 95px;
-    height: 95px;
-    margin: 0 auto 20px;
+    width: min(55%, 5.9375rem);
+    aspect-ratio: 1;
+    margin: 0 auto 1.25rem;
     border-radius: 50%;
     background-color: #f5a4a4;
 }
@@ -156,7 +147,7 @@
     border: none;
     background: transparent;
     font-family: Arial, sans-serif;
-    font-size: 15px;
+    font-size: clamp(0.8rem, 1.2vw, 0.9375rem);
     font-weight: 700;
     color: #111827;
     cursor: pointer;
@@ -167,52 +158,16 @@
 }
 
 .mentor-location {
-    margin: 8px 0 0;
+    margin: 0.5rem 0 0;
     color: #8b90a0;
-    font-size: 12px;
+    font-size: clamp(0.65rem, 1vw, 0.75rem);
 }
 
 .empty-state {
     grid-column: 1 / -1;
-    padding: 40px;
+    padding: 2.5rem;
     background-color: #ffffff;
-    border-radius: 12px;
+    border-radius: 0.75rem;
     text-align: center;
     color: #6b7280;
-}
-
-/* Tablet */
-@media (max-width: 1000px) {
-    .mentors-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* Mobile */
-@media (max-width: 650px) {
-    .admin-topbar {
-        padding: 0 20px;
-    }
-
-    .mentors-container {
-        padding: 35px 20px;
-    }
-
-    .mentor-toolbar {
-        display: block;
-    }
-
-    .search-field {
-        width: 100%;
-        margin-bottom: 16px;
-    }
-
-    .add-mentor-button {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    .mentors-grid {
-        grid-template-columns: 1fr;
-    }
 }

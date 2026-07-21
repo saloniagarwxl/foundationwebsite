@@ -1,5 +1,5 @@
 import React from "react";
-import { Bell, Calendar, Mail, MapPin, Pencil, Phone, Trash2 } from "lucide-react";
+import { Calendar, Mail, MapPin, Pencil, Phone, Trash2 } from "lucide-react";
 import "./Girlprofile.css";
 
 // Details for girl's profile. This is dummy data for showing the page design.
@@ -9,7 +9,7 @@ const girlProfile = {
     studentContact: "1234567890",
     studentEmail: "shinomiyakaguya@gmail.com",
     location: "Sikkim",
-    joinedDate: "2024-03-12",
+    joinedDate: "22-07-2024",
 };
 
 const assignedMentors = [
@@ -31,10 +31,6 @@ function GirlProfile() {
     return (
         <main className="girl-profile-page">
             <header className="girl-profile-topbar">
-                <button className="profile-notification-button" type="button">
-                    <Bell className="topbar-icon" />
-                </button>
-
                 <button className="profile-admin-button" type="button">
                     <span className="profile-admin-icon">A</span>
                     <span>Admin</span>
@@ -46,7 +42,7 @@ function GirlProfile() {
                     <div className="profile-basic-info">
                         <div className="profile-avatar"></div>
 
-                        <div>
+                        <div className="profile-name-block">
                             <h1>{girlProfile.fullName}</h1>
                             <span className="profile-role">{girlProfile.role}</span>
                         </div>

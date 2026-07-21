@@ -1,113 +1,132 @@
-import React, { useState } from "react";
+import React from "react";
+import { Calendar, Mail, MapPin, Pencil, Phone, Trash2 } from "lucide-react";
 import "./MentorsProfile.css";
 
-// Details for mentor's profile. This is dummy data for showing the page design.
+// Dummy data for mentor profile
 const mentorProfile = {
-    fullName: "Ieri Shoko",
-    Birthdate: "July 22, 1986",
-    profileImage: "/shoko.jpg",
-    state: "Kyoto",
-    country: "Japan",
-    mentorscontact: 56789,
-    mentorsemail: "shoko@gmail.com",
+    fullName: "Elena Zelavich",
+    role: "Mentor",
+    mentorContact: "1234567890",
+    mentorEmail: "elena@gmail.com",
+    location: "Sikkim",
+    joinedDate: "22-07-2024",
 };
 
-function MentorsProfile() {
-    const [showImage, setShowImage] = useState(false); // Pop up of mentor's profile picture
+// Dummy data for assigned beneficiaries
+const assignedBeneficiaries = [
+    {
+        id: 1,
+        name: "Sana Begum",
+        program: "Higher Secondary Program",
+        status: "Active",
+    },
+    {
+        id: 2,
+        name: "Alluka Zoldyck",
+        program: "Diploma Program",
+        status: "On Hold",
+    },
+];
 
+function MentorProfile() {
     return (
-        <div className="mentor-profile-page">
+        <main className="mentor-profile-page">
+            <header className="mentor-profile-topbar">
+                <button className="profile-admin-button" type="button">
+                    <span className="profile-admin-icon">A</span>
+                    <span>Admin</span>
+                </button>
+            </header>
 
-            <div className="profile-card">
+            <section className="profile-card">
+                <div className="profile-top-row">
+                    <div className="profile-basic-info">
+                        <div className="profile-avatar"></div>
 
-                <div className="profile-header">
-
-                    <img
-                        src={mentorProfile.profileImage}
-                        alt="profile"
-                        className="profile-image"
-                        onClick={() => setShowImage(true)}
-                    />
-
-                    <div className="profile-title">
-                        <h1>{mentorProfile.fullName}</h1>
+                        <div className="profile-name-block">
+                            <h1>{mentorProfile.fullName}</h1>
+                            <span className="profile-role">{mentorProfile.role}</span>
+                        </div>
                     </div>
 
-                </div>
-
-                <div className="profile-details">
-
-                    <div className="detail-item">
-                        <span className="detail-label">Full Name</span>
-                        <span className="detail-value">
-                            {mentorProfile.fullName}
-                        </span>
-                    </div>
-
-                    <div className="detail-item">
-                        <span className="detail-label">Birthdate</span>
-                        <span className="detail-value">
-                            {mentorProfile.Birthdate}
-                        </span>
-                    </div>
-
-                    <div className="detail-item">
-                        <span className="detail-label"> State/Country</span>
-                        <span className="detail-value">
-                            {mentorProfile.state}/{mentorProfile.country}
-                        </span>
-                    </div>
-
-                    <div className="detail-item">
-                        <span className="detail-label">mentor's Contact</span>
-                        <span className="detail-value">
-                            {mentorProfile.mentorscontact}
-                        </span>
-                    </div>
-
-                    <div className="detail-item">
-                        <span className="detail-label">Student's email</span>
-                        <span className="detail-value">
-                            {mentorProfile.mentorsemail}
-                        </span>
-                    </div>
-
-                </div>
-
-                <div className="profile-actions">
-                    {/* Later we can navigate this page to edit profile page using this button */}
-                    <button className="profile-button primary-button">
-                        Edit Profile
-                    </button>
-                </div>
-
-            </div>
-
-            {showImage && (
-                <div className="image-modal">
-
-                    <div className="image-modal-content">
-
-                        <button
-                            className="image-modal-close"
-                            onClick={() => setShowImage(false)}
-                        >
-                            X
+                    <div className="profile-actions">
+                        <button className="profile-button edit-button" type="button">
+                            <Pencil className="button-icon" />
+                            Edit
                         </button>
 
-                        <img
-                            src={mentorProfile.profileImage}
-                            alt="full profile"
-                            className="full-profile-image"
-                        />
+                        <button className="profile-button delete-button" type="button">
+                            <Trash2 className="button-icon" />
+                            Delete
+                        </button>
+                    </div>
+                </div>
 
+                <div className="profile-info-grid">
+                    <div className="profile-info-item">
+                        <Mail className="info-icon" />
+                        <div>
+                            <span className="info-label">Email</span>
+                            <span className="info-value">{mentorProfile.mentorEmail}</span>
+                        </div>
                     </div>
 
-                </div>
-            )}
+                    <div className="profile-info-item">
+                        <Phone className="info-icon" />
+                        <div>
+                            <span className="info-label">Phone</span>
+                            <span className="info-value">{mentorProfile.mentorContact}</span>
+                        </div>
+                    </div>
 
-        </div>
+                    <div className="profile-info-item">
+                        <MapPin className="info-icon" />
+                        <div>
+                            <span className="info-label">Location</span>
+                            <span className="info-value">{mentorProfile.location}</span>
+                        </div>
+                    </div>
+
+                    <div className="profile-info-item">
+                        <Calendar className="info-icon" />
+                        <div>
+                            <span className="info-label">Joined</span>
+                            <span className="info-value">{mentorProfile.joinedDate}</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className="assigned-beneficiaries-card">
+                <h2>Assigned Beneficiaries</h2>
+
+                <div className="assigned-beneficiary-list">
+                    {assignedBeneficiaries.map((beneficiary) => (
+                        <div className="assigned-beneficiary-row" key={beneficiary.id}>
+                            <div className="assigned-beneficiary-info">
+                                <div className="assigned-beneficiary-avatar"></div>
+
+                                <div>
+                                    <h3>{beneficiary.name}</h3>
+                                    <p>{beneficiary.program}</p>
+                                </div>
+                            </div>
+
+                            <span
+                                className={
+                                    beneficiary.status === "Active"
+                                        ? "beneficiary-status active-beneficiary"
+                                        : "beneficiary-status hold-beneficiary"
+                                }
+                            >
+                                {beneficiary.status}
+                            </span>
+                        </div>
+                    ))}
+                </div>
+            </section>
+        </main>
     );
 }
 
-export default MentorsProfile;
+export default MentorProfile;

@@ -13,7 +13,7 @@ function App() {
     <BrowserRouter>
       <div className="app-layout">
         <aside className="app-sidebar">
-          <div className="app-logo">W</div>
+          <img className="app-logo" src="/wfg-logo.png" alt="Women for Girls Foundation logo" />
 
           <nav className="app-nav">
             <NavLink to="/" className="app-nav-button">

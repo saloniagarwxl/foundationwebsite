@@ -1,5 +1,6 @@
 
 import React, { useState } from "react";
+import { SlidersHorizontal } from "lucide-react";
 import "./OurMentors.css";
 
 
@@ -60,10 +61,6 @@ function MentorsTable() {
             <section className="dashboard-main">
                 <header className="topbar">
 
-                    <button className="notification-button" type="button">
-                        <img src="/ic_Notification.svg" className="notification-button" alt="Notification" />
-
-                    </button>
                     <button className="admin-button" type="button">
                         <span className="admin-icon">A</span>
                         <span>Admin</span>
@@ -84,7 +81,9 @@ function MentorsTable() {
                         />
 
                         <div className="toolbar-actions">
-                            <button className="filter-button" type="button">Filter</button>
+                            <button className="filter-button" type="button" aria-label="Filter mentors">
+                                <SlidersHorizontal className="filter-icon" />
+                            </button>
                             <button className="add-button" type="button">+ Add Mentor</button>
                         </div>
                     </div>

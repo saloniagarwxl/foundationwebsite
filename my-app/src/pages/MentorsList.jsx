@@ -54,10 +54,6 @@ function MentorsList() {
     return (
         <main className="mentors-page">
             <header className="admin-topbar">
-                <button className="notification-button" type="button">
-                    notification
-                </button>
-
                 <button className="admin-account-button" type="button">
                     <span className="admin-avatar">A</span>
                     <span>Admin</span>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { MapPin } from "lucide-react";
+import { MapPin, Search } from "lucide-react";
 import "./GirlsList.css";
 
 // Dummy data for now. Later, this can come from a database or API.
@@ -55,10 +55,6 @@ function GirlsList() {
     return (
         <main className="girls-list-page">
             <header className="girls-topbar">
-                <button className="girls-notification-button" type="button">
-                    !
-                </button>
-
                 <button className="girls-admin-button" type="button">
                     <span className="girls-admin-icon">A</span>
                     <span>Admin</span>
@@ -86,6 +82,7 @@ function GirlsList() {
 
                 <section className="girls-toolbar">
                     <div className="search-field">
+                        <Search className="search-icon" />
                         <input
                             id="girl-search"
                             type="text"
@@ -127,7 +124,7 @@ function GirlsList() {
                                 <div>
                                     <span className="info-label girl-location">
                                         <MapPin className="location-icon" />
-                                        <strong>{girl.state}, {girl.country}</strong></span>
+                                        <strong>{girl.state}/{girl.country}</strong></span>
 
 
 

@@ -7,13 +7,18 @@ import GirlsList from "./pages/GirlsList";
 import MentorsList from "./pages/MentorsList";
 import MentorsProfile from "./pages/MentorsProfile";
 import MentorsTable from "./pages/OurMentors";
+import wfgLogo from "./assets/imagewfg.png";
 
 function App() {
   return (
     <BrowserRouter>
       <div className="app-layout">
         <aside className="app-sidebar">
-          <img className="app-logo" src="/wfg-logo.png" alt="Women for Girls Foundation logo" />
+          <img
+            className="app-logo"
+            src={wfgLogo}
+            alt="Women for Girls Foundation logo"
+          />
 
           <nav className="app-nav">
             <NavLink to="/" className="app-nav-button">

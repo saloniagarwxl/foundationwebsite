@@ -11,7 +11,7 @@ const mentorsData = [
         name: "Ms Anushka Bose",
         mobile: "7890654689",
         email: "anushka@example.com",
-        beneficiaryCount: 72,
+        beneficiaryCount: 7,
         status: "Active",
     },
     {
@@ -19,7 +19,7 @@ const mentorsData = [
         name: "Dr. Makise Kurisu",
         mobile: "7890654689",
         email: "kurisu@example.com",
-        beneficiaryCount: 58,
+        beneficiaryCount: 5,
         status: "Active",
     },
     {
@@ -27,7 +27,7 @@ const mentorsData = [
         name: "Lucy Heartfillia",
         mobile: "7890654689",
         email: "lucy@example.com",
-        beneficiaryCount: 35,
+        beneficiaryCount: 9,
         status: "Inactive",
     },
     {
@@ -35,7 +35,7 @@ const mentorsData = [
         name: "Penelope Eckhart",
         mobile: "7890654689",
         email: "penelope@example.com",
-        beneficiaryCount: 100,
+        beneficiaryCount: 6,
         status: "Inactive",
     },
     {
@@ -43,7 +43,7 @@ const mentorsData = [
         name: "Wu Zetian",
         mobile: "7890654689",
         email: "-",
-        beneficiaryCount: 20,
+        beneficiaryCount: 8,
         status: "Active",
     },
 ];
@@ -103,15 +103,7 @@ function MentorsTable() {
                                 <span>{mentor.mobile}</span>
                                 <span>{mentor.email}</span>
 
-                                <div className="progress-area">
-                                    <div className="progress-track">
-                                        <div
-                                            className="progress-fill"
-                                            style={{ width: `${mentor.beneficiaryCount}%` }}
-                                        ></div>
-                                    </div>
-                                    <span>{mentor.beneficiaryCount}%</span>
-                                </div>
+                                <span>{mentor.beneficiaryCount}</span>
 
                                 <span
                                     className={

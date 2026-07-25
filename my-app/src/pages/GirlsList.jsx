@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { MapPin, Search } from "lucide-react";
+import { MapPin, Search, Filter, Plus } from "lucide-react";
 import "./GirlsList.css";
 
 // Dummy data for now. Later, this can come from a database or API.
@@ -94,10 +94,12 @@ function GirlsList() {
 
                     <div className="girls-toolbar-actions">
                         <button className="girls-filter-button" type="button">
-                            Filter
+                            <Filter className="filter-icon" />
+
                         </button>
                         <button className="add-girl-button" type="button">
-                            +  Add beneficiary
+                            <Plus className="add-icon" />
+                            Add beneficiary
                         </button>
                     </div>
                 </section>

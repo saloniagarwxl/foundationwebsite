@@ -1,5 +1,11 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
+import {
+  Heart,
+  Users,
+  BarChart3,
+  CircleHelp,
+} from "lucide-react";
 import "./App.css";
 
 import GirlProfile from "./pages/GirlProfile";
@@ -21,22 +27,36 @@ function App() {
           />
 
           <nav className="app-nav">
-            <NavLink to="/" className="app-nav-button">
-              Mentors List
+
+            {/* Girls List */}
+            <NavLink to="/girls" className="app-nav-button">
+              <Heart size={24} strokeWidth={2} />
             </NavLink>
-            <NavLink to="/mentor-profile" className="app-nav-button">
+
+            {/* Our Mentors */}
+            <NavLink to="/ourmentors" className="app-nav-button">
+              <Users size={24} strokeWidth={2} />
+            </NavLink>
+
+            {/* Dummy Button */}
+            <button className="app-nav-button dummy-button">
+              <BarChart3 size={24} strokeWidth={2} />
+            </button>
+
+            {/* Girl Profile */}
+            <NavLink to="/girl-profile" className="app-nav-button">
+              <CircleHelp size={24} strokeWidth={2} />
+            </NavLink>
+
+          </nav>
+
+          {/* Mentor Profile text at the bottom */}
+          <div className="mentor-profile-link">
+            <NavLink to="/mentor-profile">
               Mentor Profile
             </NavLink>
-            <NavLink to="/girls" className="app-nav-button">
-              Girls List
-            </NavLink>
-            <NavLink to="/girl-profile" className="app-nav-button">
-              Girl Profile
-            </NavLink>
-            <NavLink to="/ourmentors" className="app-nav-button">
-              Our Mentors
-            </NavLink>
-          </nav>
+          </div>
+
         </aside>
 
         <main className="app-page-content">

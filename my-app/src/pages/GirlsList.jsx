@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { MapPin, Search, Filter, Plus } from "lucide-react";
+import { MapPin, Search, Filter, Plus, User, ChevronDown } from "lucide-react";
 import "./GirlsList.css";
 
 // Dummy data for now. Later, this can come from a database or API.
@@ -54,15 +54,31 @@ function GirlsList() {
 
     return (
         <main className="girls-list-page">
-            <header className="girls-topbar">
-                <button className="girls-admin-button" type="button">
-                    <span className="girls-admin-icon">A</span>
-                    <span>Admin</span>
-                </button>
-            </header>
 
-            <section className="girls-list-container">
-                <section className="girls-stats">
+
+            {/* ===== Hero Banner ===== */}
+            <section className="girls-hero">
+
+                <img
+                    src="/header.png"
+                    alt="Header"
+                    className="girls-hero-image"
+                />
+
+                <div className="girls-hero-overlay"></div>
+
+                {/* Admin */}
+                <button className="girls-admin-button" type="button">
+                    <span className="girls-admin-icon">
+                        <User size={16} strokeWidth={2} />
+                    </span>
+                    <span>Admin</span>
+                    <ChevronDown size={16} strokeWidth={2} />
+                </button>
+
+                {/* Stats */}
+                <div className="girls-stats">
+
                     <div className="girls-stat-item">
                         <strong>250</strong>
                         <span>Number of Beneficiaries</span>
@@ -72,7 +88,25 @@ function GirlsList() {
                         <strong>50</strong>
                         <span>Mentors</span>
                     </div>
-                </section>
+
+                </div>
+
+                {/* Quote */}
+                <div className="hero-quote-card">
+                    <p className="hero-quote">
+                        "The way to achieve your own success is to be
+                        willing to help somebody else get it first."
+                    </p>
+
+                    <span className="hero-author">
+                        - Iyanla Vanzant
+                    </span>
+                </div>
+
+            </section>
+
+            {/* ===== Main Content ===== */}
+            <section className="girls-list-container">
 
                 <header className="girls-list-header">
                     <div>
@@ -88,15 +122,17 @@ function GirlsList() {
                             type="text"
                             placeholder="Search Student"
                             value={searchText}
-                            onChange={(event) => setSearchText(event.target.value)}
+                            onChange={(event) =>
+                                setSearchText(event.target.value)
+                            }
                         />
                     </div>
 
                     <div className="girls-toolbar-actions">
                         <button className="girls-filter-button" type="button">
                             <Filter className="filter-icon" />
-
                         </button>
+
                         <button className="add-girl-button" type="button">
                             <Plus className="add-icon" />
                             Add beneficiary
@@ -104,7 +140,6 @@ function GirlsList() {
                     </div>
                 </section>
 
-                {/* Showing all girls after search */}
                 <section className="girls-grid">
                     {filteredGirls.map((girl) => (
                         <article className="girl-card" key={girl.id}>
@@ -115,7 +150,9 @@ function GirlsList() {
                                     <button
                                         className="girl-name-button"
                                         type="button"
-                                        onClick={() => navigate("/girl-profile")}
+                                        onClick={() =>
+                                            navigate("/girl-profile")
+                                        }
                                     >
                                         {girl.fullName}
                                     </button>
@@ -123,16 +160,17 @@ function GirlsList() {
                             </div>
 
                             <div className="girl-info-grid">
-                                <div>
-                                    <span className="info-label girl-location">
-                                        <MapPin className="location-icon" />
-                                        <strong>{girl.state}/{girl.country}</strong></span>
-
-
-
-                                </div>
+                                <span className="info-label girl-location">
+                                    <MapPin
+                                        className="location-icon"
+                                        size={13}
+                                        strokeWidth={2}
+                                    />
+                                    <span>
+                                        {girl.state}/{girl.country}
+                                    </span>
+                                </span>
                             </div>
-
                         </article>
                     ))}
 
@@ -142,6 +180,7 @@ function GirlsList() {
                         </div>
                     )}
                 </section>
+
             </section>
         </main>
     );

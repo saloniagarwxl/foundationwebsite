@@ -1,77 +1,96 @@
-/* Import Poppins font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 html {
     font-size: clamp(14px, 0.85vw + 10px, 17px);
 }
 
-/* Apply Poppins globally */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 /* Whole page */
 .girls-list-page {
     width: 100%;
     min-height: 100vh;
-    background-color: #f8f7f7;
-    font-family: 'Poppins', sans-serif;
+    background-color: #f8f8fa;
     color: #1f2937;
+    overflow-x: hidden;
 }
 
-/* Top admin bar */
-.girls-topbar {
-    min-height: 4.375rem;
-    background-color: #ffffff;
-    border-bottom: 0.0625rem solid #e5e7eb;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 1rem;
-    padding: 0 clamp(1rem, 4vw, 3.5rem);
+/* Top banner */
+.girls-hero {
+    position: relative;
+    width: 100%;
+    height: clamp(8rem, 15vw, 11rem);
+    overflow: hidden;
 }
 
+.girls-hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.girls-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 213, 224, 0.92) 0%,
+        rgba(255, 190, 205, 0.78) 52%,
+        rgba(255, 117, 138, 0.42) 100%
+    );
+}
+
+/* Admin button on the banner */
 .girls-admin-button {
-    border: none;
-    background: transparent;
+    position: absolute;
+    top: 1rem;
+    right: clamp(1.25rem, 6vw, 5rem);
+    z-index: 4;
+
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    font-weight: 600;
+    gap: 0.45rem;
+
+    padding: 0.35rem 0.75rem 0.35rem 0.4rem;
+    border: none;
+    border-radius: 999px;
+
+    background-color: rgba(255, 255, 255, 0.62);
+    color: #111827;
+    font-size: 0.78rem;
+    font-weight: 700;
     cursor: pointer;
-    font-family: 'Poppins', sans-serif;
 }
 
 .girls-admin-icon {
-    width: 2rem;
-    aspect-ratio: 1;
+    width: 1.55rem;
+    height: 1.55rem;
     border-radius: 50%;
-    background-color: #f05b5b;
+    background-color: #e95555;
     color: #ffffff;
+
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 
-/* Main content area */
-.girls-list-container {
-    width: min(92%, 67.5rem);
-    margin: 0;
-    margin-left: clamp(2rem, 5vw, 4rem);
-    margin-right: auto;
-    padding: clamp(2rem, 5vw, 3.5rem) 0;
-    box-sizing: border-box;
-}
-
-/* Stats */
+/* Numbers shown on the left side of the banner */
 .girls-stats {
+    position: absolute;
+    top: 50%;
+    left: clamp(2rem, 6vw, 5rem);
+    z-index: 3;
+    transform: translateY(-50%);
+
     display: flex;
-    flex-wrap: wrap;
-    gap: clamp(1.5rem, 16vw, 10.625rem);
-    margin-bottom: clamp(2rem, 5vw, 3rem);
+    align-items: center;
+    gap: clamp(3rem, 11vw, 8rem);
 }
 
 .girls-stat-item {
@@ -80,99 +99,129 @@ html {
 }
 
 .girls-stat-item strong {
-    color: #e05555;
-    font-size: clamp(2rem, 4vw, 2.625rem);
+    color: #eb5757;
+    font-size: clamp(2rem, 4vw, 3.1rem);
+    font-weight: 700;
     line-height: 1;
-    font-family: 'Poppins', sans-serif;
 }
 
 .girls-stat-item span {
-    margin-top: 0.5rem;
-    font-size: 0.875rem;
-    font-weight: 600;
+    margin-top: 0.35rem;
     color: #111827;
-    font-family: 'Poppins', sans-serif;
-    white-space: nowrap;
+    font-size: clamp(0.65rem, 1vw, 0.9rem);
+    font-weight: 700;
 }
 
-/* Page title */
+/* Quote card on the right side of the banner */
+.hero-quote-card {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    z-index: 3;
+    transform: translateY(-50%);
+
+    width: clamp(16rem, 36vw, 30rem);
+    min-height: 5.2rem;
+    padding: 1rem clamp(1.25rem, 3vw, 2.4rem);
+
+    border-radius: 1.8rem 0 0 1.8rem;
+    background-color: rgba(224, 85, 85, 0.35);
+    backdrop-filter: blur(0.7rem);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.hero-quote {
+    max-width: 26rem;
+    color: #ffffff;
+    text-align: right;
+    font-size: clamp(0.75rem, 1.2vw, 0.95rem);
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1.45;
+}
+
+.hero-author {
+    margin-top: 0.35rem;
+    color: #ffffff;
+    font-size: clamp(0.55rem, 0.75vw, 0.7rem);
+    font-weight: 700;
+}
+
+/* Main content area */
+.girls-list-container {
+    width: min(84%, 68rem);
+    margin: 0 auto;
+    padding: clamp(1.2rem, 3vw, 2rem) 0 clamp(2rem, 5vw, 3.5rem);
+}
+
 .girls-list-header {
-    margin-bottom: 1.375rem;
+    margin-bottom: 1rem;
 }
 
 .girls-list-header h1 {
-    margin: 0 0 1rem;
-    font-size: clamp(1.35rem, 2.4vw, 1.625rem);
+    font-size: clamp(1.3rem, 2vw, 1.65rem);
     font-weight: 700;
     color: #1f2937;
-    text-align: left;
-    font-family: 'Poppins', sans-serif;
 }
 
-/* Search and buttons */
+/* Search and action buttons */
 .girls-toolbar {
     display: flex;
-    justify-content: flex-start;
     align-items: center;
-    gap: clamp(0.75rem, 2vw, 1.25rem);
-    margin-bottom: clamp(2rem, 5vw, 3.625rem);
-    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: clamp(1.8rem, 4vw, 3rem);
 }
 
 .girls-list-page .search-field {
-    width: clamp(16rem, 24vw, 19.5rem);
+    width: clamp(13rem, 22vw, 20rem);
     position: relative;
-    min-width: 9rem;
-    flex: 0 0 auto;
 }
 
 .search-icon {
     position: absolute;
-    left: 12px;
     top: 50%;
-    transform: translateY(-50%);
-    width: 16px;
-    height: 16px;
+    left: 0.75rem;
+    width: 0.95rem;
+    height: 0.95rem;
     color: #8b90a0;
+    transform: translateY(-50%);
 }
 
 .girls-list-page .search-field input {
     width: 100%;
-    min-height: 2.375rem;
-    padding: 0 0.875rem 0 2.5rem;
+    min-height: 2.35rem;
+    padding: 0 0.9rem 0 2.4rem;
     border: none;
-    border-radius: 0.625rem;
+    border-radius: 0.6rem;
     background-color: #f1f1f5;
     color: #374151;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.875rem;
+    font-size: 0.82rem;
+    outline: none;
 }
 
 .girls-toolbar-actions {
+    margin-left: auto;
     display: flex;
     align-items: center;
-    gap: 0.875rem;
-    flex-wrap: wrap;
-    margin-left: auto;
-    justify-content: flex-end;
+    gap: 0.85rem;
 }
 
 .girls-filter-button {
-    min-height: 2.375rem;
-    padding: 0 0.8125rem;
+    width: 2.35rem;
+    height: 2.35rem;
     border: 0.0625rem solid #e5e7eb;
-    border-radius: 0.625rem;
+    border-radius: 0.65rem;
     background-color: #ffffff;
-    color: #4b5563;
+    color: #8b90a0;
     cursor: pointer;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    flex-shrink: 0;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.4rem;
 }
 
 .filter-icon {
@@ -181,17 +230,17 @@ html {
 }
 
 .add-girl-button {
-    min-height: 2.375rem;
-    padding: 0 1.25rem;
+    min-height: 2.35rem;
+    padding: 0 1.15rem;
     border: none;
-    border-radius: 0.625rem;
+    border-radius: 0.55rem;
     background-color: #e05555;
     color: #ffffff;
-    font-weight: 600;
+    font-size: 0.78rem;
+    font-weight: 700;
     cursor: pointer;
-    font-family: 'Poppins', sans-serif;
     white-space: nowrap;
-    flex-shrink: 0;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -202,65 +251,54 @@ html {
     background-color: #d44848;
 }
 
-/* Girl card grid */
+/* Girl cards */
 .girls-grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: clamp(1rem, 2.5vw, 1.75rem);
-    justify-content: start;
+    gap: clamp(1rem, 2.4vw, 1.75rem);
 }
 
 .girl-card {
-    min-height: clamp(11rem, 21vw, 14.0625rem);
-    padding: clamp(1rem, 2vw, 1.625rem) clamp(0.75rem, 2vw, 1.25rem);
+    min-height: clamp(10.5rem, 19vw, 14rem);
+    padding: clamp(1rem, 2vw, 1.55rem) 1rem;
     background-color: #ffffff;
-    border-radius: 0.875rem;
+    border-radius: 0.85rem;
     text-align: center;
-    box-sizing: border-box;
+
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .girl-card-main {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
 }
 
 .girl-avatar {
-    width: min(55%, 5.9375rem);
+    width: min(55%, 5.9rem);
     aspect-ratio: 1;
-    margin: 0 auto 1.25rem;
+    margin-bottom: 1.25rem;
     border-radius: 50%;
     background-color: #f5a4a4;
-    object-fit: cover;
-    object-position: center;
-    display: block;
     flex-shrink: 0;
 }
 
 .girl-name-button {
-    margin: 0;
-    padding: 0;
+    max-width: 100%;
     border: none;
     background: transparent;
-    font-size: clamp(0.8rem, 1.2vw, 0.9375rem);
-    font-weight: 700;
     color: #111827;
-    font-family: 'Poppins', sans-serif;
+    font-size: clamp(0.75rem, 1vw, 0.9rem);
+    font-weight: 700;
     cursor: pointer;
-    margin-top: 0.25rem;
 
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    min-height: 1.3em;
-    line-height: 1.3;
-    max-width: 100%;
+    white-space: nowrap;
 }
 
 .girl-name-button:hover {
@@ -268,44 +306,30 @@ html {
 }
 
 .girl-info-grid {
-    margin-top: 0.35rem;
+    margin-top: 0.25rem;
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-.girl-info-grid div {
-    margin: 0;
-}
-
 .girl-info-grid .info-label {
-    color: #a0938b;
-    font-size: clamp(0.65rem, 1vw, 0.75rem);
+    color: #9ca3af;
+    font-size: clamp(0.6rem, 0.9vw, 0.72rem);
     font-weight: 400;
-    font-family: 'Poppins', sans-serif;
 }
 
 .girl-location {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 0.25rem;
     justify-content: center;
+    gap: 0.18rem;
 }
 
 .location-icon {
-    width: 0.75rem;
-    height: 0.75rem;
+    width: 0.72rem;
+    height: 0.72rem;
     color: #8b90a0;
     flex-shrink: 0;
-}
-
-.girl-info-grid strong {
-    color: #a08c8b;
-    font-size: clamp(0.65rem, 1vw, 0.75rem);
-    font-weight: 400;
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.2;
-
 }
 
 .empty-state {
@@ -315,5 +339,4 @@ html {
     border-radius: 0.75rem;
     text-align: center;
     color: #6b7280;
-    font-family: 'Poppins', sans-serif;
 }
